@@ -18,7 +18,7 @@
     props: ['groceries'],
     methods: {
       save(item) {
-        this.$emit('update',item);
+        this.$emit('update', item);
       }
     }
   }

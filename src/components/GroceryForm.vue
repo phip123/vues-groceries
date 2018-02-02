@@ -18,22 +18,22 @@
 </template>
 
 <script>
-    export default {
-        name: "grocery-form",
-      data () {
-        return {
-          model: {
-            name: ''
-          }
+  export default {
+    name: "grocery-form",
+    data() {
+      return {
+        model: {
+          name: ''
         }
-      },
-      methods: {
-          add() {
+      }
+    },
+    methods: {
+      add() {
 
-            this.$emit('submit',this.model)
-          }
+        this.$emit('submit', this.model)
       }
     }
+  }
 </script>
 
 <style scoped>

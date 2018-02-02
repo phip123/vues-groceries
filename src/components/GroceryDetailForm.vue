@@ -41,7 +41,7 @@
         this.$emit('cancel');
       },
       save() {
-        this.$emit('save',this.model)
+        this.$emit('save', this.model)
       }
     }
   }

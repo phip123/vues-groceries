@@ -13,7 +13,7 @@
       :grocery="grocery"
       @save="save"
       @cancel="cancel"
-      >
+    >
     </grocery-detail-form>
   </div>
 
@@ -42,7 +42,7 @@
     methods: {
       save(item) {
         console.log('save: ' + item.name);
-        this.$emit('save',item);
+        this.$emit('save', item);
       },
       cancel() {
         console.log('cancel');

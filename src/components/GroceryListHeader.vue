@@ -14,9 +14,9 @@
 </template>
 
 <script>
-    export default {
-        name: "grocery-list-header"
-    }
+  export default {
+    name: "grocery-list-header"
+  }
 </script>
 
 <style scoped>

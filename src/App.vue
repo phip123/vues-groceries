@@ -6,18 +6,18 @@
 </template>
 
 <script>
-import groceries from './components/Groceries'
+  import groceries from './components/Groceries'
 
-export default {
-  name: 'App',
-  components: {
-    groceries
+  export default {
+    name: 'App',
+    components: {
+      groceries
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  text-align: center;
-}
+  #app {
+    text-align: center;
+  }
 </style>
