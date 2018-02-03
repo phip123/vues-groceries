@@ -83,9 +83,19 @@ export default {
     check (item) {
       this.groceries = this.groceries.map(i => {
         if (i.id === item.id) {
-          return Object.assign(item, {done: !item.done})
+          item = Object.assign(item, {done: !item.done})
+          return item
         }
         return i
+      }).sort((a, b) => {
+        if (a.done && !b.done) {
+          return 1
+        }
+
+        if (!a.done && b.done) {
+          return -1
+        }
+        return 0
       })
     }
   }

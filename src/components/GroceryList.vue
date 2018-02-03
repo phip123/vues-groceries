@@ -1,6 +1,7 @@
 <template>
-  <ul>
+  <transition-group name="list" tag="ul" mode="in-out">
     <li
+      class="list-item"
       is="grocery-item"
       v-for="grocery in groceries"
       :key="grocery.id"
@@ -9,7 +10,7 @@
       @remove="remove"
       @check="check">
     </li>
-  </ul>
+  </transition-group>
 </template>
 
 <script>
@@ -34,5 +35,29 @@ export default {
 </script>
 
 <style scoped>
+.list-item {
+  transition: all 0.4s;
+}
+.list-enter {
+  opacity: 0;
+  transform: translateX(30px);
+}
 
+.list-enter-to {
+  transform: translateX(30px);
+}
+
+.list-enter-active {
+  transition: all 0.1s;
+  transform: translateY(-15px);
+}
+
+.list-leave-to {
+  transition: all 0.35s;
+  opacity: 0;
+}
+.list-leave-active {
+  transform: translateX(30px);
+
+}
 </style>
