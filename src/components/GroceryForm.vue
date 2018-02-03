@@ -25,7 +25,8 @@ export default {
       model: {
         name: '',
         quantity: 0,
-        unit: 'None'
+        unit: 'None',
+        done: false
       }
     }
   },

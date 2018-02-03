@@ -45,7 +45,8 @@ export default {
           id: -1,
           name: '',
           quantity: 0,
-          unit: 'None'
+          unit: 'None',
+          done: false
         }
       }
     }
@@ -62,6 +63,7 @@ export default {
     },
     check () {
       console.log('check')
+      this.$emit('check', this.grocery)
     },
 
     edit () {

@@ -6,6 +6,7 @@
       <grocery-list
         @update="update"
         @remove="remove"
+        @check="check"
         :groceries="groceries"
       ></grocery-list>
     </section>
@@ -33,19 +34,22 @@ export default {
           id: 1,
           name: 'Apple',
           quantity: 0,
-          unit: 'None'
+          unit: 'None',
+          done: false
         },
         {
           id: 2,
           name: 'Cherries',
           quantity: 0,
-          unit: 'None'
+          unit: 'None',
+          done: false
         },
         {
           id: 3,
           name: 'Oranges',
           quantity: 0,
-          unit: 'None'
+          unit: 'None',
+          done: false
         }
       ]
     }
@@ -75,6 +79,14 @@ export default {
     },
     remove (item) {
       this.groceries = this.groceries.filter(i => i.id !== item.id)
+    },
+    check (item) {
+      this.groceries = this.groceries.map(i => {
+        if (i.id === item.id) {
+          return Object.assign(item, {done: !item.done})
+        }
+        return i
+      })
     }
   }
 

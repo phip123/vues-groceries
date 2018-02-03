@@ -6,7 +6,8 @@
       :key="grocery.id"
       :grocery="grocery"
       @save="save"
-      @remove="remove">
+      @remove="remove"
+      @check="check">
     </li>
   </ul>
 </template>
@@ -22,8 +23,11 @@ export default {
     save (item) {
       this.$emit('update', item)
     },
-    remove(item) {
-      this.$emit('remove',item)
+    remove (item) {
+      this.$emit('remove', item)
+    },
+    check (item) {
+      this.$emit('check',item)
     }
   }
 }
