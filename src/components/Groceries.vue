@@ -13,9 +13,9 @@
 </template>
 
 <script>
-  import GroceryList from "./GroceryList";
-  import GroceryForm from "./GroceryForm";
-  import GroceryListHeader from "./GroceryListHeader";
+  import GroceryList from './GroceryList'
+  import GroceryForm from './GroceryForm'
+  import GroceryListHeader from './GroceryListHeader'
 
   export default {
     components: {
@@ -48,21 +48,21 @@
         const elem = {
           id: this.nextId(),
           ...element
-        };
-        console.log(elem);
-        console.log(this.groceries);
-        this.groceries.push(elem);
+        }
+        console.log(elem)
+        console.log(this.groceries)
+        this.groceries.push(elem)
       },
       nextId() {
-        this.lastId += 1;
-        return this.lastId;
+        this.lastId += 1
+        return this.lastId
       },
       update(item) {
         this.groceries = this.groceries.map(i => {
           if (i.id === item.id) {
-            return item;
+            return item
           } else {
-            return i;
+            return i
           }
         })
       }

@@ -27,7 +27,7 @@
 <script>
   export default {
     props: ['grocery'],
-    name: "grocery-detail-form",
+    name: 'grocery-detail-form',
     data() {
       return {
         model: {
@@ -38,7 +38,7 @@
     },
     methods: {
       cancel() {
-        this.$emit('cancel');
+        this.$emit('cancel')
       },
       save() {
         this.$emit('save', this.model)

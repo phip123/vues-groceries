@@ -22,16 +22,16 @@
 <script>
   export default {
     props: ['grocery'],
-    name: "grocery-item-detail",
+    name: 'grocery-item-detail',
     methods: {
       check() {
-        this.$emit('check');
+        this.$emit('check')
       },
       edit() {
-        this.$emit('edit');
+        this.$emit('edit')
       },
       remove() {
-        this.$emit('remove');
+        this.$emit('remove')
       }
     }
   }

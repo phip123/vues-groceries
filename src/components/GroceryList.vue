@@ -3,6 +3,7 @@
     <li
       is="grocery-item"
       v-for="grocery in groceries"
+      :key="grocery.id"
       :grocery="grocery"
       @save="save">
     </li>
@@ -10,15 +11,15 @@
 </template>
 
 <script>
-  import GroceryItem from './GroceryItem';
+  import GroceryItem from './GroceryItem'
 
   export default {
     components: {GroceryItem},
-    name: "grocery-list",
+    name: 'grocery-list',
     props: ['groceries'],
     methods: {
       save(item) {
-        this.$emit('update', item);
+        this.$emit('update', item)
       }
     }
   }

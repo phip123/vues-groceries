@@ -15,7 +15,7 @@
 
 <script>
   export default {
-    name: "grocery-list-header"
+    name: 'grocery-list-header'
   }
 </script>
 

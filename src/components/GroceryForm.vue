@@ -19,7 +19,7 @@
 
 <script>
   export default {
-    name: "grocery-form",
+    name: 'grocery-form',
     data() {
       return {
         model: {
@@ -29,7 +29,6 @@
     },
     methods: {
       add() {
-
         this.$emit('submit', this.model)
       }
     }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-bottom: 20px">
     <grocery-item-detail
       v-if="!showEdit"
       :grocery="grocery"
@@ -17,19 +17,18 @@
     </grocery-detail-form>
   </div>
 
-
 </template>
 
 <script>
   // TODO wennn "Got it!" Hinten einreihen und ausgrauen. nur delete button offen lassen
-  import GroceryForm from './GroceryForm';
-  import GroceryItemDetail from "./GroceryItemDetail";
-  import GroceryDetailForm from "./GroceryDetailForm";
+  import GroceryForm from './GroceryForm'
+  import GroceryItemDetail from './GroceryItemDetail'
+  import GroceryDetailForm from './GroceryDetailForm'
 
   export default {
     data() {
       return {
-        showEdit: false,
+        showEdit: false
       }
     },
     components: {
@@ -37,37 +36,33 @@
       GroceryItemDetail,
       GroceryForm
     },
-    name: "grocery-item",
+    name: 'grocery-item',
     props: ['grocery'],
     methods: {
       save(item) {
-        console.log('save: ' + item.name);
-        this.$emit('save', item);
+        console.log('save: ' + item.name)
+        this.$emit('save', item)
       },
       cancel() {
-        console.log('cancel');
-        this.showEdit = !this.showEdit;
+        console.log('cancel')
+        this.showEdit = !this.showEdit
       },
       check() {
         console.log('check')
-
       },
 
       edit() {
-        console.log('edit');
-        this.showEdit = !this.showEdit;
+        console.log('edit')
+        this.showEdit = !this.showEdit
       },
 
       remove() {
         console.log('remove')
-
       }
     }
   }
 </script>
 
 <style scoped>
-  .card {
-    margin-bottom: 10px;
-  }
+
 </style>
