@@ -5,6 +5,7 @@
       <grocery-form @submit="add"></grocery-form>
       <grocery-list
         @update="update"
+        @remove="remove"
         :groceries="groceries"
       ></grocery-list>
     </section>
@@ -57,7 +58,7 @@ export default {
       }
       console.log(elem)
       console.log(this.groceries)
-      this.groceries.push(elem)
+      this.groceries = [elem].concat(this.groceries)
     },
     nextId () {
       this.lastId += 1
@@ -71,6 +72,9 @@ export default {
           return i
         }
       })
+    },
+    remove (item) {
+      this.groceries = this.groceries.filter(i => i.id !== item.id)
     }
   }
 

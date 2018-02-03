@@ -37,7 +37,19 @@ export default {
     GroceryForm
   },
   name: 'grocery-item',
-  props: ['grocery'],
+  props: {
+    grocery: {
+      type: Object,
+      default: function () {
+        return {
+          id: -1,
+          name: '',
+          quantity: 0,
+          unit: 'None'
+        }
+      }
+    }
+  },
   methods: {
     save (item) {
       console.log('save: ' + item.name)
@@ -59,6 +71,7 @@ export default {
 
     remove () {
       console.log('remove')
+      this.$emit('remove', this.grocery)
     }
   }
 }

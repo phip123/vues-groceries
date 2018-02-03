@@ -5,7 +5,8 @@
       v-for="grocery in groceries"
       :key="grocery.id"
       :grocery="grocery"
-      @save="save">
+      @save="save"
+      @remove="remove">
     </li>
   </ul>
 </template>
@@ -20,6 +21,9 @@ export default {
   methods: {
     save (item) {
       this.$emit('update', item)
+    },
+    remove(item) {
+      this.$emit('remove',item)
     }
   }
 }
