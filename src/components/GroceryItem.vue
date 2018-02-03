@@ -41,6 +41,7 @@ export default {
   methods: {
     save (item) {
       console.log('save: ' + item.name)
+      this.showEdit = !this.showEdit
       this.$emit('save', item)
     },
     cancel () {

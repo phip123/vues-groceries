@@ -30,15 +30,21 @@ export default {
       groceries: [
         {
           id: 1,
-          name: 'Apple'
+          name: 'Apple',
+          quantity: 0,
+          unit: 'None'
         },
         {
           id: 2,
-          name: 'Cherries'
+          name: 'Cherries',
+          quantity: 0,
+          unit: 'None'
         },
         {
           id: 3,
-          name: 'Oranges'
+          name: 'Oranges',
+          quantity: 0,
+          unit: 'None'
         }
       ]
     }

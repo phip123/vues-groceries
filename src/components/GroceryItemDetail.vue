@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-content">
       <div class="content is-medium">
-        <p>{{grocery.name}}</p>
+        <p>{{quantity}} {{grocery.name}}</p>
       </div>
     </div>
     <footer class="card-footer">
@@ -21,7 +21,20 @@
 
 <script>
 export default {
-  props: ['grocery'],
+  props: {
+    grocery: {
+      type: Object,
+      default: function () {
+        return {
+          id: -1,
+          name: '',
+          quantity: -1,
+          unit: 'None'
+        }
+
+      }
+    }
+  },
   name: 'grocery-item-detail',
   methods: {
     check () {
@@ -32,6 +45,20 @@ export default {
     },
     remove () {
       this.$emit('remove')
+    }
+  },
+  computed: {
+    quantity: function () {
+      let s = ''
+      if (this.grocery.quantity && this.grocery.quantity !== 0) {
+        s += this.grocery.quantity + ' '
+      }
+
+      if (this.grocery.unit && this.grocery.unit !== 'None') {
+        s += this.grocery.unit + ' of '
+      }
+
+      return s
     }
   }
 }

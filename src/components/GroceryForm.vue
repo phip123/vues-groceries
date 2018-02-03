@@ -23,7 +23,9 @@ export default {
   data () {
     return {
       model: {
-        name: ''
+        name: '',
+        quantity: 0,
+        unit: 'None'
       }
     }
   },
