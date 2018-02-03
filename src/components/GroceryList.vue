@@ -28,7 +28,7 @@ export default {
       this.$emit('remove', item)
     },
     check (item) {
-      this.$emit('check',item)
+      this.$emit('check', item)
     }
   }
 }
@@ -46,7 +46,6 @@ export default {
 .list-enter-to {
   //transform: translateX(30px);
 }
-
 
 .list-enter-active {
   //transition: all 0.1s;
