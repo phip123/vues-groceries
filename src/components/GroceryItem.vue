@@ -1,20 +1,23 @@
 <template>
   <div style="margin-bottom: 20px">
-    <grocery-item-detail
-      v-if="!showEdit"
-      :grocery="grocery"
-      @check="check"
-      @edit="edit"
-      @remove="remove">
+    <transition name="item">
+      <grocery-item-detail
+        v-if="!showEdit"
+        :grocery="grocery"
+        @check="check"
+        @edit="edit"
+        @remove="remove">
 
-    </grocery-item-detail>
-    <grocery-detail-form
-      v-if="showEdit"
-      :grocery="grocery"
-      @save="save"
-      @cancel="cancel"
-    >
-    </grocery-detail-form>
+      </grocery-item-detail>
+      <grocery-detail-form
+        key="form"
+        v-if="showEdit"
+        :grocery="grocery"
+        @save="save"
+        @cancel="cancel"
+      >
+      </grocery-detail-form>
+    </transition>
   </div>
 
 </template>
@@ -80,5 +83,18 @@ export default {
 </script>
 
 <style scoped>
+.item-enter-active {
+  animation: bounce-in .3s;
 
+}
+.item-leave-active {
+}
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 </style>

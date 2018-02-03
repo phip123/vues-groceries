@@ -71,7 +71,7 @@ export default {
     update (item) {
       this.groceries = this.groceries.map(i => {
         if (i.id === item.id) {
-          return item
+          return Object.assign(i, item)
         } else {
           return i
         }

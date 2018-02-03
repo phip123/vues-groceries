@@ -36,7 +36,7 @@ export default {
 
 <style scoped>
 .list-item {
-  transition: all 0.4s;
+  transition: 0.4s;
 }
 .list-enter {
   opacity: 0;
@@ -44,12 +44,13 @@ export default {
 }
 
 .list-enter-to {
-  transform: translateX(30px);
+  //transform: translateX(30px);
 }
 
+
 .list-enter-active {
-  transition: all 0.1s;
-  transform: translateY(-15px);
+  //transition: all 0.1s;
+  //transform: translateY(-15px);
 }
 
 .list-leave-to {
@@ -57,7 +58,7 @@ export default {
   opacity: 0;
 }
 .list-leave-active {
-  transform: translateX(30px);
+  //transform: translateX(30px);
 
 }
 </style>
