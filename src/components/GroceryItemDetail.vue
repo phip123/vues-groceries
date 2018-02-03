@@ -20,21 +20,21 @@
 </template>
 
 <script>
-  export default {
-    props: ['grocery'],
-    name: 'grocery-item-detail',
-    methods: {
-      check() {
-        this.$emit('check')
-      },
-      edit() {
-        this.$emit('edit')
-      },
-      remove() {
-        this.$emit('remove')
-      }
+export default {
+  props: ['grocery'],
+  name: 'grocery-item-detail',
+  methods: {
+    check () {
+      this.$emit('check')
+    },
+    edit () {
+      this.$emit('edit')
+    },
+    remove () {
+      this.$emit('remove')
     }
   }
+}
 </script>
 
 <style scoped>

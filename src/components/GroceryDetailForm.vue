@@ -25,26 +25,26 @@
 </template>
 
 <script>
-  export default {
-    props: ['grocery'],
-    name: 'grocery-detail-form',
-    data() {
-      return {
-        model: {
-          id: this.grocery.id,
-          name: this.grocery.name
-        }
-      }
-    },
-    methods: {
-      cancel() {
-        this.$emit('cancel')
-      },
-      save() {
-        this.$emit('save', this.model)
+export default {
+  props: ['grocery'],
+  name: 'grocery-detail-form',
+  data () {
+    return {
+      model: {
+        id: this.grocery.id,
+        name: this.grocery.name
       }
     }
+  },
+  methods: {
+    cancel () {
+      this.$emit('cancel')
+    },
+    save () {
+      this.$emit('save', this.model)
+    }
   }
+}
 </script>
 
 <style scoped>

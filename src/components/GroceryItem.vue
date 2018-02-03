@@ -20,47 +20,47 @@
 </template>
 
 <script>
-  // TODO wennn "Got it!" Hinten einreihen und ausgrauen. nur delete button offen lassen
-  import GroceryForm from './GroceryForm'
-  import GroceryItemDetail from './GroceryItemDetail'
-  import GroceryDetailForm from './GroceryDetailForm'
+// TODO wennn "Got it!" Hinten einreihen und ausgrauen. nur delete button offen lassen
+import GroceryForm from './GroceryForm'
+import GroceryItemDetail from './GroceryItemDetail'
+import GroceryDetailForm from './GroceryDetailForm'
 
-  export default {
-    data() {
-      return {
-        showEdit: false
-      }
+export default {
+  data () {
+    return {
+      showEdit: false
+    }
+  },
+  components: {
+    GroceryDetailForm,
+    GroceryItemDetail,
+    GroceryForm
+  },
+  name: 'grocery-item',
+  props: ['grocery'],
+  methods: {
+    save (item) {
+      console.log('save: ' + item.name)
+      this.$emit('save', item)
     },
-    components: {
-      GroceryDetailForm,
-      GroceryItemDetail,
-      GroceryForm
+    cancel () {
+      console.log('cancel')
+      this.showEdit = !this.showEdit
     },
-    name: 'grocery-item',
-    props: ['grocery'],
-    methods: {
-      save(item) {
-        console.log('save: ' + item.name)
-        this.$emit('save', item)
-      },
-      cancel() {
-        console.log('cancel')
-        this.showEdit = !this.showEdit
-      },
-      check() {
-        console.log('check')
-      },
+    check () {
+      console.log('check')
+    },
 
-      edit() {
-        console.log('edit')
-        this.showEdit = !this.showEdit
-      },
+    edit () {
+      console.log('edit')
+      this.showEdit = !this.showEdit
+    },
 
-      remove() {
-        console.log('remove')
-      }
+    remove () {
+      console.log('remove')
     }
   }
+}
 </script>
 
 <style scoped>
