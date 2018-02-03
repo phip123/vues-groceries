@@ -60,8 +60,6 @@ export default {
         id: this.nextId(),
         ...element
       }
-      console.log(elem)
-      console.log(this.groceries)
       this.groceries = [elem].concat(this.groceries)
     },
     nextId () {

@@ -4,7 +4,7 @@
       <div class="control is-expanded">
         <input
           v-bind:class="{ 'is-danger': error }"
-          v-model.trim="model.name"
+          v-model="model.name"
           class="input is-medium is-rounded"
           type="text"
           placeholder="Anything you want">
@@ -29,12 +29,7 @@ export default {
   name: 'grocery-form',
   data () {
     return {
-      model: {
-        name: '',
-        quantity: 0,
-        unit: 'None',
-        done: false
-      },
+      model: this.emptyModel(),
       error: false
     }
   },
@@ -48,6 +43,16 @@ export default {
       }
 
       this.$emit('submit', this.model)
+      this.model = this.emptyModel()
+      console.log(this.model)
+    },
+    emptyModel () {
+      return {
+        name: '',
+        quantity: 0,
+        unit: 'None',
+        done: false
+      }
     }
   }
 }

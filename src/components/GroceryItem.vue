@@ -56,26 +56,21 @@ export default {
   },
   methods: {
     save (item) {
-      console.log('save: ' + item.name)
       this.showEdit = !this.showEdit
       this.$emit('save', item)
     },
     cancel () {
-      console.log('cancel')
       this.showEdit = !this.showEdit
     },
     check () {
-      console.log('check')
       this.$emit('check', this.grocery)
     },
 
     edit () {
-      console.log('edit')
       this.showEdit = !this.showEdit
     },
 
     remove () {
-      console.log('remove')
       this.$emit('remove', this.grocery)
     }
   }
